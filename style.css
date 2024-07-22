@@ -10,6 +10,100 @@ body {
     min-height: 100vh;
     background: #f1f1f1;
     font-family: Arial, Helvetica, sans-serif;
-    padding: clamp(20px, 5vw, 50px) 20px 20px;
+    padding: clamp(20px, 5vw, 50px) 20px 20px; /**/
 }
 
+.wikilogo {
+    width: clamp(20px, 25vw, 250px);
+    display: block;
+    margin : 50px auto 0; /*top, right, bottom, left=haut, droit, bas, gauche*/
+}
+
+h1 {
+    font-size : clamp(20px, 5vw, 50px);
+    color: black;
+    text-align: center;
+    margin: 20px 0 10px; /*20 en haut, 0 à gauche et droite et 10 en bas*/
+    font-weight: 100;
+}
+
+h1 span {
+    font-weight: 700;
+}
+
+form {
+    max-width: 800px;
+    margin: 0 auto 30px; /*0 en haut automatique gauche et droite et 30 en bas */
+}
+
+input {
+    display: block;
+    width: 100%;
+    margin: 0 auto; /*haut/bas et gauche/droite*/
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 0 5px 5px rgba(0,0,0,0.2);
+}
+
+.error-msg{
+    text-align: center;
+    color: #454545; 
+}
+
+.result-display {
+    max-width: 600px;
+    margin: 70px auto;
+}
+
+.loader {
+    display: flex;
+    justify-content: center;
+}
+
+.dot {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    background: #111;
+    margin: 0 3px;
+    animation : load 0.3s infinite ease-out alternate;
+    /*animation load 0.3s a l'infini, lent vers la fin(ease-out) */
+}
+
+.dot:nth-child(2) {
+    animation-delay: 0.1s;
+}
+
+.dot:nth-child(3) {
+    animation-delay: 0.1s;
+} /*Ajout de délai de translation de point*/
+
+/*ANIMATION*/
+@keyframes load {
+    to {
+        transform : translateY(10px); 
+    }
+}
+
+
+.result-display {
+    margin-bottom: 20px;
+}
+
+.result-title {
+    font-size: 22px;
+}
+
+.result-snippet {
+    font-size: 15px;
+    color: #444;
+}
+
+.result-link {
+    color : #006621;
+    text-decoration: none;
+    display: block;
+    overflow-wrap: break-word;
+}

@@ -1,4 +1,5 @@
 /* API ENDPOINT :   https://en.wikipedia.org/w/api.php?
+/* API ENDPOINT :   https://fr.wikipedia.org/w/api.php?
 action=query&list=search&format=json&origin=*&s
 rlimit=20&srsearch=${searchInput}    */
 
@@ -25,8 +26,31 @@ function handleSubmit(e){
 // await=attendre le res
 async function wikiApiCall(searchInput){
     const response = await fetch(`https://en.wikipedia.org/w/api.php?
+    const response = await fetch(`https://fr.wikipedia.org/w/api.php?
         action=query&list=search&format=json&origin=*
         &srlimit=20&srsearch=${searchInput}`)
     
     const data = await response.json(); //pour traiter le json
+    createCards(data.query.search)
+}
+
+function createCards(data){
+    if(!data.length){
+        errorMsg.textContent = "Aucun résultat";
+        return;
+    }
+    data.forEach(el => {
+        const url = `https://fr.wikipedia.org/curid=${el.pageid}`;
+        const card = document.createElement("div");
+        card.className = "result-item";
+        card.innerHTML = `
+        <h3 class="result-title">
+            <a href="" target="_blank">${el.title}</a> 
+        </h3>
+        <a href="" class="result-link" target="_blank"></a>
+        <span class="result-snippet">${el.snippet}</span>
+        <br>
+        `// target=_blank pour ouvrir dans une autre page.
+
+    })
 }

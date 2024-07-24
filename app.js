@@ -1,4 +1,3 @@
-/* API ENDPOINT :   https://en.wikipedia.org/w/api.php?
 /* API ENDPOINT :   https://fr.wikipedia.org/w/api.php?
 action=query&list=search&format=json&origin=*&s
 rlimit=20&srsearch=${searchInput}    */
@@ -25,7 +24,6 @@ function handleSubmit(e){
 // fetch=aller chercher
 // await=attendre le res
 async function wikiApiCall(searchInput){
-    const response = await fetch(`https://en.wikipedia.org/w/api.php?
     const response = await fetch(`https://fr.wikipedia.org/w/api.php?
         action=query&list=search&format=json&origin=*
         &srlimit=20&srsearch=${searchInput}`)

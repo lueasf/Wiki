@@ -54,6 +54,7 @@ input {
 
 .result-display {
     max-width: 600px;
+    align-items: center;
     margin: 70px auto;
 }
 
@@ -90,20 +91,25 @@ input {
 
 .result-item {
     margin-bottom: 20px;
+    margin-left: 400px;
+    align-items: center;
 }
 
 .result-title {
     font-size: 22px;
+    align-items: center;
 }
 
 .result-snippet {
     font-size: 15px;
+    align-items: center;
     color: #444;
 }
 
 .result-link {
     color : #006621;
     text-decoration: none;
+    align-items: center;
     display: block;
     overflow-wrap: break-word;
 }
